@@ -20,7 +20,7 @@ This project demonstrates how to ingest data from the NewsAPI using the Data Loa
 1. Clone this repository:
    ```
    git clone <repository-url>
-   cd dlt-newsapi-ingestion
+   cd dlt-newsapi-dumper
    ```
 
 2. Install dependencies using Poetry:
