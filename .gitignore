@@ -1,0 +1,33 @@
+# dlt
+\.dlt/secrets.toml
+*.duckdb
+*.html
+*_files
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+main.tf
+tfplan
+.terraform.lock.hcl
+_data-infra-provisioning
+
+
+# Python
+*.pyc
+__pycache__/
+venv/
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Custom files
+TODO.md
