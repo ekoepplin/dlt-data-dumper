@@ -1,7 +1,13 @@
 [runtime]
-log_level="WARNING"  
+log_level = "WARNING"  
 dlthub_telemetry = true
 
 [pipeline]
-loader_file_format="parquet"
+loader_file_format = "parquet"
+
+[destination]
+name = "filesystem"
+
+[destination.filesystem]
+bucket_url = "s3://newsapi-dev"
 
