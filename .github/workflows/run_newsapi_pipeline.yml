@@ -34,4 +34,4 @@ jobs:
       env:
         NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-      run: pipenv run python newsapi_top_headlines_to_s3.py
+      run: pipenv run python newsapi_pipeline.py.py
