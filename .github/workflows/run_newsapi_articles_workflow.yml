@@ -32,13 +32,16 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.11.x
-    - uses: syphar/restore-virtualenv@v1
-      id: cache-virtualenv
+    - name: Install pipenv
+      run: pip install pipenv
+    - name: Cache pipenv virtualenv
+      uses: actions/cache@v3
+      id: cache-pipenv
       with:
-        requirement_files: requirements_github_action.txt
-    - uses: syphar/restore-pip-download-cache@v1
-      if: steps.cache-virtualenv.outputs.cache-hit != 'true'
-    - run: pip install -r requirements_github_action.txt
-      if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+        path: ~/.local/share/virtualenvs
+        key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
+    - name: Install dependencies
+      if: steps.cache-pipenv.outputs.cache-hit != 'true'
+      run: pipenv install --deploy
     - name: Run pipeline script
-      run: python 'newsapi_pipeline.py'
+      run: pipenv run python 'newsapi_pipeline.py'
