@@ -2,8 +2,8 @@
 log_level = "WARNING"  
 dlthub_telemetry = true
 
-[pipeline]
-loader_file_format = "parquet"
+[normalize]
+loader_file_format="parquet"
 
 [destination]
 name = "filesystem"
