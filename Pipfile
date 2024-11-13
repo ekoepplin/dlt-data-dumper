@@ -52,6 +52,10 @@ urllib3 = "==2.2.3"
 wrapt = "==1.16.0"
 yarl = "==1.15.5"
 dlt = {extras = ["parquet"], version = "*"}
+black = "*"
+flake8 = "*"
+isort = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.11"
