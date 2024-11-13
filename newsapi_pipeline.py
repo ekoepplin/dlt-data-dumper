@@ -1,11 +1,11 @@
-import dlt
-from newsapi.newsapi_client import NewsApiClient
-from datetime import datetime, timedelta
-import json
-from loguru import logger  # Import Loguru
 import argparse
+import json
+from datetime import datetime, timedelta
 from pathlib import Path
 
+import dlt
+from loguru import logger  # Import Loguru
+from newsapi.newsapi_client import NewsApiClient
 
 # Get today's date and calculate the date range for a 24-hour period
 today = datetime.utcnow().date()
@@ -145,8 +145,8 @@ def run_pipeline(destination="filesystem", full_refresh=False):
     )
 
     load_info = pipeline.run(
-        run_all_articles(), write_disposition="replace" if full_refresh else "append"
-    )
+        run_all_articles(),
+        write_disposition="replace" if full_refresh else "append")
 
     logger.info(f"Load info: {load_info}")
     logger.success(f"All data processed and uploaded to {destination}")
