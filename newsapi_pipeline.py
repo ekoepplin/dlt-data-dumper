@@ -1,7 +1,5 @@
 import argparse
-import json
 from datetime import datetime, timedelta
-from pathlib import Path
 
 import dlt
 from loguru import logger  # Import Loguru
@@ -145,8 +143,8 @@ def run_pipeline(destination="filesystem", full_refresh=False):
     )
 
     load_info = pipeline.run(
-        run_all_articles(),
-        write_disposition="replace" if full_refresh else "append")
+        run_all_articles(), write_disposition="replace" if full_refresh else "append"
+    )
 
     logger.info(f"Load info: {load_info}")
     logger.success(f"All data processed and uploaded to {destination}")
