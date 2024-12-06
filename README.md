@@ -13,7 +13,7 @@ This project demonstrates how to ingest data from the NewsAPI using the Data Loa
 ## Prerequisites
 
 - Python 3.11.8
-- Poetry for dependency management
+- Pipenv for dependency management
 
 ## Installation
 
@@ -23,14 +23,14 @@ This project demonstrates how to ingest data from the NewsAPI using the Data Loa
    cd dlt-data-dumper
    ```
 
-2. Install dependencies using Poetry:
+2. Install dependencies using Pipenv:
    ```
-   poetry install
+   pipenv install
    ```
 
 3. Activate the virtual environment:
    ```
-   poetry shell
+   pipenv shell
    ```
 
 4. Set up your NewsAPI key:
