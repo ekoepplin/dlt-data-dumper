@@ -51,11 +51,11 @@ tzdata = "==2024.2"
 urllib3 = "==2.2.3"
 wrapt = "==1.16.0"
 yarl = "==1.15.5"
-dlt = "*"
 black = "*"
 flake8 = "*"
 isort = "*"
 autopep8 = "*"
+dlt = {extras = ["parquet"], version = "*"}
 
 [requires]
 python_version = "3.11"
