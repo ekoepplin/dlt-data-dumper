@@ -5,6 +5,7 @@ name: Run newsapi_articles pipeline from newsapi_pipeline.py
   workflow_dispatch: null
 env:
   DESTINATION__FILESYSTEM__DATASET_NAME: newsapi
+  NEWSAPI_PIPELINE__DESTINATION__SCHEMA_NAME: "ingest_newsapi_v1"
   DESTINATION__FILESYSTEM__BUCKET_URL: ${{ secrets.BUCKET_URL }}
   NEWSAPI__DESTINATION__ATHENA__QUERY_RESULT_BUCKET: ${{ secrets.ATHENA__QUERY_RESULT_BUCKET }}
   NEWSAPI__DESTINATION__BUCKET_URL: ${{ secrets.NEWSAPI__DESTINATION__BUCKET_URL_PROD }}

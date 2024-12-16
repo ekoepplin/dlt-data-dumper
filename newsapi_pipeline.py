@@ -1,5 +1,6 @@
 import argparse
 from datetime import datetime, timedelta
+from pathlib import Path
 
 import dlt
 from loguru import logger  # Import Loguru
@@ -8,6 +9,8 @@ from newsapi.newsapi_client import NewsApiClient
 # Get today's date and calculate the date range for a 24-hour period
 today = datetime.utcnow().date()
 before_yesterday = today - timedelta(days=2)
+
+target_schema_name: str = dlt.config[f"{Path(__file__).stem}.destination.schema_name"]
 
 
 # Define a resource for fetching articles from the US
@@ -139,7 +142,7 @@ def run_pipeline(destination="filesystem", full_refresh=False):
     pipeline = dlt.pipeline(
         pipeline_name="newsapi_articles",
         destination=destination,
-        dataset_name="newsapi_data",
+        dataset_name=target_schema_name,
     )
 
     load_info = pipeline.run(
